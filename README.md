@@ -56,6 +56,15 @@ https://PBuilds-dev.github.io/little-lemon-responsive-website/
 
 ---
 
+## Image Attribution & Usage
+
+All visual assets used in this project are sourced from publicly available third-party content and are utilized strictly for non-commercial, educational, and portfolio demonstration purposes.
+
+No ownership is claimed over any third-party imagery. All images are used solely to illustrate a conceptual restaurant interface and do not represent real products, services, or individuals.
+
+If any rights holder has concerns regarding usage, the content will be reviewed and removed promptly upon request.
+
+---
 ## Future Improvements
 
 * Add JavaScript interactivity (menu filtering, animations)
