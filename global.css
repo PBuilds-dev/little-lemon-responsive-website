@@ -3,3 +3,101 @@ INSERT FOOTER, HEADER, NAV BAR AND WHATNOT HERE
 remove duplicates individually from each css code
 make sure to put it here first before removing
 **/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Times New Roman", Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #edefee;
+    color: #333;
+}
+main {
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+.main-logo {
+    width: 300px;
+    margin-bottom: 1rem;
+}
+.main-nav {
+    background-color: #495e57;
+}
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    list-style: none;
+}
+.nav-links a {
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s ease;
+}
+.breadcrumb-container {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    color: #495e57;
+}
+.breadcrumb-container a {
+    font-weight: bold;
+}
+.breadcrumb-container a:hover {
+    color: #f4ce14;
+}
+.breadcrumb-container {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    color: #495e57;
+}
+.breadcrumb-container a {
+    color: #495e57;
+    font-weight: bold;
+}
+.breadcrumb-container a:hover {
+    color: #f4ce14;
+}
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+}
+.footer-copy {
+    color: #555555;
+}
+@media (max-width: 900px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .main-logo {
+        width: 220px;
+    }
+}
