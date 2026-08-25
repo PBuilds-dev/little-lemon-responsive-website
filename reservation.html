@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        <link rel="stylesheet" href="global.css>
+    -->
     <link rel="stylesheet" href="reservation.css">
     <title>Reservation Page</title>
 </head>
@@ -111,8 +114,9 @@
             </section>
             <!-- end of policies -->
             <!--start of booking form -->
-            <section class="reservation-form-section">
+            <section class="reservation-form-section" aria-labelledby="reservation-heading">
                 <h2>Reservation Details</h2>
+                <form id="reservation-form">
                 <!-- DATE: should only be starting from date tomorrow and then end up to 7 days only 
                  (ex: When booking on a Sunday the availability should only be Monday up until Sunday, 
                  then when booking on a Monday, availability of dates should be from Tuesday to Monday then so on and forth)
@@ -124,6 +128,7 @@
                         This is If a user manually types an invalid time (e.g., 11:00 AM), 
                         the browser will flag it as an error and block the form from being submitted.
                 -->
+
                     <label for="datemax">Date: </label>
                         <input type="date" id="datemax" name="datemax" max="2026-12-20" min="2026-08-20">   
                     <label for="booking-time">Time: </label>    
@@ -156,6 +161,7 @@
                         <label for="dairy-free">Dairy-free</label>
                     <textarea></textarea>
             <!-- end of booking form -->
+             </form>
         </section>
 
         
