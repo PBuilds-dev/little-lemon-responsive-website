@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reservation.css">
+    <title>Reservation Page</title>
+</head>
+<body>
+    <header class="site-header">
+        <div><img src="./images/logo1.png" alt="Little Lemon Logo" class="main-logo"></div>
+    </header>
+    <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+    </nav>
+    <section class="logo-text">
+                <h1 class="logo-title">Book your reservation now!</h1>
+                    <p class="logo-description"><strong>Hungry for something delicious?</strong></p>
+                    <p>Book your table and join us for a Mediterranean-inspired meal made to be enjoyed, shared, and remembered.</p>
+    </section>
+    <main>
+        <section class="reservation-layout">
+            <!-- start of policies -->
+             <section class="reservation-policy-section">
+                <!-- REMEMBER TO PUT NOTIFICATION POP UP: I’d use a modal/popup message that appears when they click “Continue to Booking."
+                    "Before proceeding, please confirm that you have read and understood Little Lemon’s reservation policies.
+                    By continuing, you acknowledge that seating requests, alfresco availability, table duration, 
+                    cancellation expectations, large party requirements, and pet restrictions are part of the reservation agreement. 
+                    Little Lemon reserves the right to refuse or adjust seating when these policies are not followed."
+
+                    BUTTON TEXT: "I Understand and Agree"
+                    SECONDARY BUTTON: "Review Policies"
+
+                    SIDE NOTE: "Little Lemon reserves the right to decline, modify, or cancel reservations when these policies are not observed."
+
+                    FLOW TO FOLLOW: Customer lands on reservation page.
+                                    They see policies first.
+                                    They check: “I have read and agree…”
+                                    They click “Continue to Booking.”
+                                    Popup appears with a final confirmation.
+                                    They click “I Understand and Agree.”
+                                    Booking form becomes visible or scrolls into view.
+                    
+                    TO MODIFY IN CODE: 
+                        TEXTAREA: awkward placement, too small, should have size limit, placeholder text, maximum characters.
+                        DINING ENVIRONMENT: will only choose from the options, cannot be typed into or edited.
+                        DATE & TIME: required, fix the bug via html if possible, if not then will fix during js code
+                        PHONE NUMBER: max characters
+
+                    TO ADD:
+                        Footer area
+                        Cancellation Button
+                        Breadcrumb nav before header text
+                        Number of guests
+                        (IF POSSIBLE) the logic behind the email sending thingy and the other features needed to make this finalized:
+                            MAIN FEATURES TO FOCUS ON: 
+                                CODE
+                                    Dark Mode Toggle - CSS
+                                    Auto-play slider - JS
+                                    Live Status Badge & Countdown - JS & HTML
+                                    Live Search - JS
+                                    Dietary Toggles - JS
+                                DESIGN
+                                    Confirmation message/email after booking
+                                    Dietary flag at booking time (ties nicely into your Dietary Toggles feature — could reuse that component)
+                                    Waitlist option if fully booked
+                -->
+                <h2>Reservation Policies</h2>
+                    <article>
+                        <h3>Large Parties</h3>
+                        <p>For parties of <strong>8 or more guests</strong> contact us directly by phone to make your reservation. 
+                            Large-party reservations cannot be accommodated through our online booking form. </p>
+                    </article>
+                    <article>
+                        <h3>Cancellation & No-Show Policy</h3>
+                        <p>If you need to cancel or modify your reservation, please notify us <strong><em> least ONE HOUR in advance.</em></strong>
+                            This allows us to accommodate other guests and prepare accordingly.</p>
+                    </article>
+                    <article>
+                        <h3>Reservation Duration</h3>
+                        <p>To ensure a smooth dining experience for all our guests, tables are reserved for a maximum of <strong>60 minutes.</strong>
+                            We kindly ask that guests arrive promptly for their reservation.</p>
+                    </article>
+                    <article>
+                        <h3>Pet Policy</h3>
+                        <p>For the comfort and safety of all our guests, pets are not permitted inside the restaurant.
+                            <strong>Service animals are welcome</strong> in accordance with applicable regulations.</p>
+                    </article>
+                     <article>
+                        <h3>Alfresco Seating</h3>
+                        <p>Alfresco seating is weather dependent and may be changed or moved indoors depending on availability and safety conditions.</p>
+                    </article>
+                    <article>
+                        <h3>Service Charge & Deposit</h3>
+                        <p>A <strong>10% service charge</strong> is applied to all dining experiences. 
+                            As our dishes are prepared fresh and made to order, this charge reflects the care 
+                            and personalized service we provide to every guest.</p>
+                        <p>A <strong>$50 deposit</strong> is required to secure your reservation. 
+                            The deposit is non-refundable but will be deducted from your final bill on the day of your visit.</p>
+                    </article>
+                    <label>
+                        <input type="checkbox" id="policy-confirmation" name="policy-confirmation">
+                        I have read and agreed to the reservation policies.
+                    </label>
+                    <button type="button">Continue to booking</button>
+            </section>
+            <!-- end of policies -->
+            <!--start of booking form -->
+            <section class="reservation-form-section">
+                <h2>Reservation Details</h2>
+                <!-- DATE: should only be starting from date tomorrow and then end up to 7 days only 
+                 (ex: When booking on a Sunday the availability should only be Monday up until Sunday, 
+                 then when booking on a Monday, availability of dates should be from Tuesday to Monday then so on and forth)
+                 should automatically update based on time and day.
+                    NOTE: THIS WILL BE TIED TO JS LOGIC OF LIVE STATUS HOURS
+                    TIME: restaurant hours are from 10am to 10pm only.
+                        time on reservation page should only be from 12noon to 9pm. 
+                    OTHERS: page should have a Validation Failure feature. 
+                        This is If a user manually types an invalid time (e.g., 11:00 AM), 
+                        the browser will flag it as an error and block the form from being submitted.
+                -->
+                    <label for="datemax">Date: </label>
+                        <input type="date" id="datemax" name="datemax" max="2026-12-20" min="2026-08-20">   
+                    <label for="booking-time">Time: </label>    
+                        <input type="time" id="booking-time" name="booking-time" min="13:00" max="21:00" step="1800" required></input>
+                        <!-- Need JS Fallback for time and date validation -->
+                    <label for="doptions">Dining Environment: </label>
+                        <input list="dining-options" id="doptions">
+                            <datalist id="dining-options">
+                                <option value="Indoor"></option>
+                                <option value="Alfresco"></option>
+                                <option value="Bar Seating"></option>
+                            </datalist>
+                <h2>Guest Information</h2>
+                    <label for="guest-name">Name: </label>
+                        <input type="text" name="guest-name" id="guest-name" placeholder="Jane Doe" required>
+                    <label for="phone-number">Phone Number: </label>
+                        <input type="tel" id="phone-number" name="phone-number" placeholder="ex. +639 8765 4321" required>
+                    <label for="email">Email Address: </label>
+                        <input type="email" id="email" name="email" placeholder="ex. name@email.com" required>
+                <h2>Dining Needs</h2>
+                    <input type="checkbox" name="vegetarian" id="vgetarian" value="vegetarian">
+                        <label for="vegetarian">Vegetarian</label>
+                    <input type="checkbox" name="vegan" id="vegan" value="vegan">
+                        <label for="vegan">Vegan</label>
+                    <input type="checkbox" name="gluten-free" id="gluten-free" value="gluten-free">
+                        <label for="gluten-free">Gluten-free</label>
+                    <input type="checkbox" name="nut-allergy" id="nut-allergy" value="nut-allergy">
+                        <label for="nut-allergy">Nut Allergy</label>
+                    <input type="checkbox" name="dairy-free" id="dairy-free" value="dairy-free">
+                        <label for="dairy-free">Dairy-free</label>
+                    <textarea></textarea>
+            <!-- end of booking form -->
+        </section>
+
+        
+
+        <input type="submit" value="Submit">
+        </section>
+
+    </main>
+</body>
+</html>

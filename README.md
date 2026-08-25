@@ -32,7 +32,7 @@ The project focuses on UI clarity, visual hierarchy, and consistent design patte
 /images
 index.html
 about.html
-styles.css (if applicable)
+styles.css
 ```
 
 ---
@@ -67,13 +67,13 @@ If any rights holder has concerns regarding usage, the content will be reviewed 
 ---
 ## Future Improvements
 
-* Add JavaScript interactivity (menu filtering, animations)
+* Add JavaScript interactivity: Dark Mode Toggle, Auto-Play Slider, Live Status Badge + Closing Countdown, Live Search, Dietary Toggles
+* Add Reservation Form Validation (required fields, date/time logic, party size limits)
 * Improve accessibility (ARIA roles, contrast optimization)
 * Convert to React or component-based architecture
-* Add contact form with validation
 
 ---
 
 ## Status
 
-Completed – Portfolio Ready
+In Progress
