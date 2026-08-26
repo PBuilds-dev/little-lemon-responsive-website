@@ -21,6 +21,11 @@
                 <li><a href="#footer">Contact</a></li>
             </ul>
     </nav>
+    <br>
+    <nav aria-label="breadcrumb" class="breadcrumb-container">
+        <a href="index.html">Home</a> &#47 <span>Reservation</span>
+    </nav>
+    <br>
     <section class="logo-text">
                 <h1 class="logo-title">Book your reservation now!</h1>
                     <p class="logo-description"><strong>Hungry for something delicious?</strong></p>
@@ -30,36 +35,15 @@
         <section class="reservation-layout">
             <!-- start of policies -->
              <section class="reservation-policy-section">
-                <!-- REMEMBER TO PUT NOTIFICATION POP UP: I’d use a modal/popup message that appears when they click “Continue to Booking."
-                    "Before proceeding, please confirm that you have read and understood Little Lemon’s reservation policies.
-                    By continuing, you acknowledge that seating requests, alfresco availability, table duration, 
-                    cancellation expectations, large party requirements, and pet restrictions are part of the reservation agreement. 
-                    Little Lemon reserves the right to refuse or adjust seating when these policies are not followed."
-
-                    BUTTON TEXT: "I Understand and Agree"
-                    SECONDARY BUTTON: "Review Policies"
-
-                    SIDE NOTE: "Little Lemon reserves the right to decline, modify, or cancel reservations when these policies are not observed."
-
-                    FLOW TO FOLLOW: Customer lands on reservation page.
-                                    They see policies first.
-                                    They check: “I have read and agree…”
-                                    They click “Continue to Booking.”
-                                    Popup appears with a final confirmation.
-                                    They click “I Understand and Agree.”
-                                    Booking form becomes visible or scrolls into view.
-                    
-                    TO MODIFY IN CODE: 
+               <!--     
+                TO MODIFY IN CODE: 
                         TEXTAREA: awkward placement, too small, should have size limit, placeholder text, maximum characters.
                         DINING ENVIRONMENT: will only choose from the options, cannot be typed into or edited.
                         DATE & TIME: required, fix the bug via html if possible, if not then will fix during js code
                         PHONE NUMBER: max characters
 
                     TO ADD:
-                        Footer area
                         Cancellation Button
-                        Breadcrumb nav before header text
-                        Number of guests
                         (IF POSSIBLE) the logic behind the email sending thingy and the other features needed to make this finalized:
                             MAIN FEATURES TO FOCUS ON: 
                                 CODE
@@ -110,12 +94,34 @@
                         <input type="checkbox" id="policy-confirmation" name="policy-confirmation">
                         I have read and agreed to the reservation policies.
                     </label>
-                    <button type="button">Continue to booking</button>
+                    <button type="button" id="continue-to-booking">Continue to booking</button>
             </section>
             <!-- end of policies -->
+            <!-- MODAL POP UP -->
+             <div class="policy-modal is-hidden" id="policy-modal" role="dialog" aria-modal="true" aria-labelledby="policy-modal-title">
+                <div class="policy-modal-content">
+                    <h2 id="policy-modal-title">Before Proceeding</h2>
+                    <p>
+                        Please confirm that you have read and understood Little Lemon’s reservation policies.
+                    </p>
+                    <p>
+                        By continuing, you acknowledge that seating requests, alfresco availability, table duration,
+                        cancellation expectations, large party requirements, and pet restrictions are part of the reservation agreement.
+                        Little Lemon reserves the right to refuse or adjust seating when these policies are not followed.
+                    </p>
+                    <p class="policy-modal-note">
+                        Little Lemon reserves the right to decline, modify, or cancel reservations when these policies are not observed.
+                    </p>
+
+                    <button type="button" id="agree-policy-btn">I Understand and Agree.</button>
+                    <button type="button" id="review-policies">Review Policies</button>
+                </div>
+
+             </div>
+            <!-- END OF POP UP -->
             <!--start of booking form -->
-            <section class="reservation-form-section" aria-labelledby="reservation-heading">
-                <h2>Reservation Details</h2>
+            <section class="reservation-form-section is-hidden" id="reservation-form-section" aria-labelledby="reservation-heading">
+                <h2 id="reservation-heading">Reservation Details</h2>
                 <form id="reservation-form">
                 <!-- DATE: should only be starting from date tomorrow and then end up to 7 days only 
                  (ex: When booking on a Sunday the availability should only be Monday up until Sunday, 
@@ -130,18 +136,19 @@
                 -->
 
                     <label for="datemax">Date: </label>
-                        <input type="date" id="datemax" name="datemax" max="2026-12-20" min="2026-08-20">   
+                        <input type="date" id="datemax" name="datemax" max="2026-12-20" min="2026-08-20" required>   
                     <label for="booking-time">Time: </label>    
-                        <input type="time" id="booking-time" name="booking-time" min="13:00" max="21:00" step="1800" required></input>
+                        <input type="time" id="booking-time" name="booking-time" min="13:00" max="21:00" step="1800" required>
                         <!-- Need JS Fallback for time and date validation -->
                     <label for="doptions">Dining Environment: </label>
-                        <input list="dining-options" id="doptions">
-                            <datalist id="dining-options">
-                                <option value="Indoor"></option>
-                                <option value="Alfresco"></option>
-                                <option value="Bar Seating"></option>
-                            </datalist>
-                <h2>Guest Information</h2>
+                            <select name="dining-options" id="doptions">
+                                <option value="Indoor">Indoor</option>
+                                <option value="Alfresco">Alfresco</option>
+                                <option value="Bar Seating">Bar Seating</option>
+                            </select>
+                    <label for="guest-number">Guest Count: </label>
+                    <input type="number" id="guest-number" min="1" max="7" required>
+                <h2>Representative Guest Information</h2>
                     <label for="guest-name">Name: </label>
                         <input type="text" name="guest-name" id="guest-name" placeholder="Jane Doe" required>
                     <label for="phone-number">Phone Number: </label>
@@ -149,7 +156,7 @@
                     <label for="email">Email Address: </label>
                         <input type="email" id="email" name="email" placeholder="ex. name@email.com" required>
                 <h2>Dining Needs</h2>
-                    <input type="checkbox" name="vegetarian" id="vgetarian" value="vegetarian">
+                    <input type="checkbox" name="vegetarian" id="vegetarian" value="vegetarian">
                         <label for="vegetarian">Vegetarian</label>
                     <input type="checkbox" name="vegan" id="vegan" value="vegan">
                         <label for="vegan">Vegan</label>
@@ -159,16 +166,23 @@
                         <label for="nut-allergy">Nut Allergy</label>
                     <input type="checkbox" name="dairy-free" id="dairy-free" value="dairy-free">
                         <label for="dairy-free">Dairy-free</label>
-                    <textarea></textarea>
+                    <textarea id="textarea"></textarea>
+
+                <input type="submit" value="Submit">
             <!-- end of booking form -->
              </form>
-        </section>
-
-        
-
-        <input type="submit" value="Submit">
-        </section>
-
     </main>
+    <script src="script.js"></script>
+    <footer class="site-footer" id="footer">
+        <div class="footer-logo">
+            <img src="images/little lemon logo.jpg" alt="Little Lemon Logo" width="200px" height="90px">
+            <p>Call us at (123) 456-7890</p>
+        </div>
+        <div class="footer-copy"> 
+            <p>&copy; 2026 Little Lemon. All rights reserved.</p>
+            <p>Designed by Phoebe Vergara</p>
+            <p>Meta Front-End Developer Professional Certificate</p>
+        </div>       
+    </footer>
 </body>
 </html>
