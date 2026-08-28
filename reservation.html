@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
-        <link rel="stylesheet" href="global.css>
-    -->
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="reservation.css">
     <title>Reservation Page</title>
 </head>
@@ -38,10 +36,8 @@
                <!--     
                 TO MODIFY IN CODE: 
                         TEXTAREA: awkward placement, too small, should have size limit, placeholder text, maximum characters.
-                        DINING ENVIRONMENT: will only choose from the options, cannot be typed into or edited.
                         DATE & TIME: required, fix the bug via html if possible, if not then will fix during js code
-                        PHONE NUMBER: max characters
-
+                        
                     TO ADD:
                         Cancellation Button
                         (IF POSSIBLE) the logic behind the email sending thingy and the other features needed to make this finalized:
@@ -152,7 +148,7 @@
                     <label for="guest-name">Name: </label>
                         <input type="text" name="guest-name" id="guest-name" placeholder="Jane Doe" required>
                     <label for="phone-number">Phone Number: </label>
-                        <input type="tel" id="phone-number" name="phone-number" placeholder="ex. +639 8765 4321" required>
+                        <input type="tel" id="phone-number" name="phone-number" placeholder="ex. +639 8765 4321" required maxlength="12">
                     <label for="email">Email Address: </label>
                         <input type="email" id="email" name="email" placeholder="ex. name@email.com" required>
                 <h2>Dining Needs</h2>
