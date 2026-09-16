@@ -1,3 +1,20 @@
+// for author: 
+// Reservation Page
+    -header title, header description text styling
+    - continue to booking button styling
+    - styling of checkbox and checkmark should be green/yellow to reflect website colors
+    - padding of reservation policies collide with the form
+    - reservation form, needs to be polished even w/o logic yet
+    - styling of form should also be handled 
+// Home Page 
+    - Testimonials image should be uniform
+    - Book A Table > Reserve Now button should redirect to reservation page as well
+// Menu Page 
+    - Each food should be hidden at first, then only revealed when category is clicked. Find tutorial on W3SCHOOLS HOWTO guide.
+    - This will eliminate the sticky nav to make it look cleaner.
+// About Us Page
+    - Text on hero is not visible. Should be changed to default white the same as the 30% offer on the home page.
+    - Our Values padding collides with page footer. 
 # Little Lemon Responsive Website
 
 ## Overview

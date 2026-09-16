@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Page</title>
-    <!--
-        <link rel="stylesheet" href="global.css>
-    -->
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
     <header class="site-header">
         <div><img src="./images/logo1.png" alt="Little Lemon Logo" class="main-logo"></div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
     </header>
     <nav class="main-nav">
             <ul class="nav-links">
@@ -78,14 +77,19 @@
         <section class="about-team">
             <div class="container">
             <div class="about-team-content">
-                <div class="about-gallery">
+                <div class="about-gallery" id="team-slider">
                     <div class="about-gallery-track">
-                        <img src="./images/3.jpg" alt="Little Lemon About Us Image" width="100%" height="400px">
-                        <img src="./images/4.jpg" alt="Little Lemon About Us Image" width="100%" height="400px">
-                        <img src="./images/5.jpg" alt="Little Lemon About Us Image" width="100%" height="400px">
-                        <img src="./images/6.jpg" alt="Little Lemon About Us Image" width="100%" height="400px">
-                        <img src="./images/7.jpg" alt="Little Lemon About Us Image" width="100%" height="400px">
-                        <img src="./images/8.jpg" alt="Little Lemon About Us Image" width="100%" height="400px">
+                        <!-- 
+                                CONFUSED ABOUT THE ID FOR EACH OF THE IMAGES
+                                FOLLOWING #2 instruction ON CODEX
+                        
+                        -->
+                        <img src="./images/3.jpg" alt="Little Lemon team" width="100%" height="400px">
+                        <img src="./images/4.jpg" alt="Little Lemon team" width="100%" height="400px">
+                        <img src="./images/5.jpg" alt="Little Lemon team" width="100%" height="400px">
+                        <img src="./images/6.jpg" alt="Little Lemon team" width="100%" height="400px">
+                        <img src="./images/7.jpg" alt="Little Lemon team" width="100%" height="400px">
+                        <img src="./images/8.jpg" alt="Little Lemon team" width="100%" height="400px">
                     </div>
                 </div>
                 <div class="about-team-text">
@@ -160,6 +164,7 @@
             </div>
         </section>
     </main>
+    <script src="script.js"></script>
     <footer class="site-footer" id="footer">
         <div class="footer-logo">
             <img src="images/little lemon logo.jpg" alt="Little Lemon Logo" width="200px" height="90px">

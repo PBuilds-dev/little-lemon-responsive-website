@@ -10,6 +10,7 @@
 <body>
     <header class="site-header">
         <div><img src="./images/logo1.png" alt="Little Lemon Logo" class="main-logo"></div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
     </header>
     <nav class="main-nav">
             <ul class="nav-links">
@@ -70,6 +71,137 @@
                 </div>
             </article>
         </section>
+        <section class="testimonials" aria-labelledby="testimonials-title">
+            <h2>A Taste Worth Sharing</h2>
+
+            <div class="testimonials-viewport">
+                <div class="testimonials-track">
+                    <article class="testimonial-card">
+                        <button class="testimonial-trigger"
+                                type="button"
+                                data-image="images/chicken alfredo linguine.jpg"
+                                data-alt="Chicken Alfredo Linguine"
+                                data-name="Sofia, 31"
+                                data-job="Marketing Manager"
+                                data-highlight="Alfredo Linguine"
+                                data-rating="5"
+                                data-review="I came in with a few colleagues after work and ended up loving almost everything we ordered. 
+                            The flavors felt fresh and familiar at the same time, and the Alfredo Linguine was the highlight for me. 
+                            Little Lemon is definitely going on my list of places to bring friends.">
+                            <img src="images/chicken alfredo linguine.jpg" alt="Chicken Alfredo Linguine">
+                            <span>Sofia, 31 - Marketing Manager</span>
+                        </button>
+                    </article>
+                    <article class="testimonial-card">
+                        <button class="testimonial-trigger"
+                                type="button"
+                                data-image="images/med moussaka.jpg"
+                                data-alt="Mediterranean Moussaka"
+                                data-name="Elena, 42"
+                                data-job="Homemaker"
+                                data-highlight="Mediterranean Moussaka"
+                                data-rating="5"
+                                data-review="We brought the whole family for dinner, and everyone found something they enjoyed. 
+                            I loved that the menu had lighter choices alongside heartier dishes, like their Mediterranean Moussaka, 
+                            so there was something for everyone at the table. 
+                            It was a lovely family meal, and we’ll definitely be returning.">
+                            <img src="images/med moussaka.jpg" alt="Mediterranean Moussaka">
+                            <span>Elena, 42 — Homemaker</span>
+                        </button>
+                    </article>
+                    <article class="testimonial-card">
+                        <button class="testimonial-trigger"
+                                type="button"
+                                data-image="images/chicken pide.jpg"
+                                data-alt="Chicken Pide"
+                                data-name="Lidia, 63"
+                                data-job="Retired Teacher"
+                                data-highlight="Chicken Pide"
+                                data-rating="5"
+                                data-review="My husband and I enjoy discovering restaurants that remind us of the Mediterranean flavors we grew up with. 
+                            Little Lemon brought back some familiar tastes while still offering its own interpretation. 
+                            We had a wonderful dinner together and appreciated the warm, welcoming feel of the restaurant, and of course, enjoyed their Chicken Pide.">
+                            <img src="images/chicken pide.jpg" alt="Chicken Pide">
+                            <span>Lidia, 63 — Retired Teacher</span>
+                        </button>
+                    </article>
+                    <article class="testimonial-card">
+                        <button class="testimonial-trigger"
+                                type="button"
+                                data-image="images/seafood arrabbiata.jpg"
+                                data-alt="Seafood Arrabbiata"
+                                data-name="Michael, 57"
+                                data-job="Business Consultant"
+                                data-highlight="Seafood Arrabbiata"
+                                data-rating="5"
+                                data-review="I chose Little Lemon for a dinner with a business associate and was impressed by the balance of quality and atmosphere. 
+                            The food gave us plenty to talk about, while the setting remained relaxed enough for a good conversation. 
+                            I could easily see myself returning for both business and personal dinners.">
+                            <img src="images/seafood arrabbiata.jpg" alt="Seafood Arrabbiata">
+                            <span>Michael, 57 — Business Consultant</span>
+                        </button>
+                    </article>
+                    <article class="testimonial-card">
+                        <button class="testimonial-trigger"
+                                type="button"
+                                data-image="images/Little Lemon Mint Cooler.jpg"
+                                data-alt="Little Lemon Mint Cooler"
+                                data-name="Mia, 29"
+                                data-job="Freelance Graphic Designer"
+                                data-highlight="lemonade"
+                                data-rating="5"
+                                data-review="I stopped by for dinner on my own and was surprised by how comfortable the whole experience felt. 
+                            The food was beautifully prepared, portions were satisfying, and the lemonade was exactly what I needed. 
+                            I’d happily come back either by myself or with friends.">
+                            <img src="images/Little Lemon Mint Cooler.jpg" alt="Little Lemon Mint Cooler">
+                            <span>Mia, 29 — Freelance Graphic Designer</span>
+                        </button>
+                    </article>
+                    <article class="testimonial-card">
+                        <button class="testimonial-trigger"
+                                type="button"
+                                data-image="images/lamb gyro plate.jpg"
+                                data-alt="Lamb Gyro Plate"
+                                data-name="Daniel, 34"
+                                data-job="Architect"
+                                data-highlight="Lamb Gyro Plate|Iskender Kebab|Tiramisu"
+                                data-rating="5"
+                                data-review="I’m always interested in trying different cuisines, and Little Lemon was a great find. 
+                            I especially enjoyed the Lamb Gyro Plate, the Iskender Kebab and their Tiramisu!
+                            It’s the kind of place where you can have a proper dinner without feeling like you need a special occasion.">
+                            <img src="images/lamb gyro plate.jpg" alt="Lamb Gyro Plate">
+                            <span>Daniel, 34 — Architect</span>
+                        </button>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <div id="testimonial-modal"
+             class="testimonial-modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="modal-name"
+             aria-hidden="true">
+
+             <div class="testimonial-modal-content">
+                <button class="modal-close" type="button" aria-labelledby="Close testimonial">
+                    &times;
+                </button>
+                
+                <img src="" alt="" id="modal-image">
+
+                <div class="modal-review">
+                    <p id="modal-rating"></p>
+                    <h3 id="modal-name"></h3>
+                    <p id="modal-job"></p>
+                    <blockquote id="modal-review-text"></blockquote>
+
+                    <button id="modal-next" type="button">Next</button>
+                </div>
+
+             </div>
+
+        </div>
     </main>
     <footer class="site-footer" id="footer">
         <div class="footer-logo">
@@ -82,5 +214,6 @@
             <p>Meta Front-End Developer Professional Certificate</p>
         </div>       
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

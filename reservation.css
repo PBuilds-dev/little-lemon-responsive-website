@@ -1,3 +1,94 @@
 .is-hidden {
     display: none;
 }
+
+.reservation-layout {
+    padding: var(--space-fluid-md) 0 var(--space-fluid-xl);
+}
+
+.reservation-policy-section,
+.reservation-form-section {
+    padding: var(--space-fluid-lg);
+    border-radius: var(--radius-large);
+    background-color: var(--surface);
+    box-shadow: var(--shadow-light);
+}
+
+.reservation-policy-section h2,
+.reservation-form-section h2 {
+    margin-bottom: var(--space-fluid-md);
+    color: var(--primary-green);
+}
+
+.reservation-policy-section article {
+    margin-bottom: var(--space-fluid-md);
+    padding: var(--space-fluid-md);
+    border-left: 4px solid var(--primary-yellow);
+    background-color: var(--surface-muted);
+}
+
+.reservation-policy-section article h3 {
+    margin-bottom: var(--space-fluid-xs);
+    color: var(--primary-green);
+}
+
+.reservation-policy-section > label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-fluid-xs);
+    margin: var(--space-fluid-md) 0;
+    color: var(--text);
+}
+
+.policy-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: grid;
+    place-items: center;
+    padding: var(--space-fluid-md);
+    background-color: rgba(15, 23, 42, 0.72);
+}
+
+.policy-modal.is-hidden {
+    display: none;
+}
+
+.policy-modal-content {
+    width: min(100%, 42rem);
+    padding: var(--space-fluid-lg);
+    border-radius: var(--radius-large);
+    background-color: var(--surface);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+}
+
+.policy-modal-content h2 {
+    color: var(--primary-green);
+}
+
+.policy-modal-content p {
+    margin-bottom: var(--space-fluid-sm);
+}
+
+.policy-modal-note {
+    font-weight: bold;
+}
+
+#agree-policy-btn,
+#review-policies {
+    margin: var(--space-fluid-xs) var(--space-fluid-xs) 0 0;
+    padding: var(--space-fluid-sm) var(--space-fluid-md);
+    border: 0;
+    border-radius: var(--radius-small);
+    background-color: var(--primary-green);
+    color: var(--text-on-dark);
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#agree-policy-btn:hover,
+#review-policies:hover {
+    background-color: var(--primary-yellow);
+    color: var(--primary-green);
+}
