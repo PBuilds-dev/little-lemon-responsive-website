@@ -44,7 +44,6 @@
                         (IF POSSIBLE) the logic behind the email sending thingy and the other features needed to make this finalized:
                             MAIN FEATURES TO FOCUS ON: 
                                 CODE
-                                    Dark Mode Toggle - CSS
                                     Auto-play slider - JS
                                     Live Status Badge & Countdown - JS & HTML
                                     Live Search - JS
@@ -92,11 +91,12 @@
                         <p>A <strong>$50 deposit</strong> is required to secure your reservation. 
                             The deposit is non-refundable but will be deducted from your final bill on the day of your visit.</p>
                     </article>
-                    <label>
-                        <input type="checkbox" id="policy-confirmation" name="policy-confirmation">
+                    <label class="policy-conf-container">
+                        <input type="checkbox" id="policy-confirmation" name="policy-confirmation" checked="checked">
                         I have read and agreed to the reservation policies.
+                        <span class="checkmark"></span>
                     </label>
-                    <button type="button" id="continue-to-booking">Continue to booking</button>
+                    <button type="button" id="continue-to-booking" class="hero-button">Continue to booking</button>
             </section>
             <!-- end of policies -->
             <!-- MODAL POP UP -->
@@ -115,7 +115,7 @@
                         Little Lemon reserves the right to decline, modify, or cancel reservations when these policies are not observed.
                     </p>
 
-                    <button type="button" id="agree-policy-btn">I Understand and Agree.</button>
+                    <button type="button" id="agree-policy-btn">I Understand and Agree</button>
                     <button type="button" id="review-policies">Review Policies</button>
                 </div>
 
@@ -158,19 +158,35 @@
                     <label for="email">Email Address: </label>
                         <input type="email" id="email" name="email" placeholder="ex. name@email.com" required>
                 <h2>Dining Needs</h2>
-                    <input type="checkbox" name="vegetarian" id="vegetarian" value="vegetarian">
-                        <label for="vegetarian">Vegetarian</label>
-                    <input type="checkbox" name="vegan" id="vegan" value="vegan">
-                        <label for="vegan">Vegan</label>
-                    <input type="checkbox" name="gluten-free" id="gluten-free" value="gluten-free">
-                        <label for="gluten-free">Gluten-free</label>
-                    <input type="checkbox" name="nut-allergy" id="nut-allergy" value="nut-allergy">
-                        <label for="nut-allergy">Nut Allergy</label>
-                    <input type="checkbox" name="dairy-free" id="dairy-free" value="dairy-free">
-                        <label for="dairy-free">Dairy-free</label>
+                    <label for="vegetarian" class="restrictions">
+                        <input type="checkbox" name="vegetarian" id="vegetarian" value="vegetarian">
+                        Vegetarian
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="vegan" class="restrictions">
+                        <input type="checkbox" name="vegan" id="vegan" value="vegan">
+                        Vegan
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="gluten-free" class="restrictions">
+                        <input type="checkbox" name="gluten-free" id="gluten-free" value="gluten-free">
+                        Gluten-free
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="nut-allergy" class="restrictions">
+                        <input type="checkbox" name="nut-allergy" id="nut-allergy" value="nut-allergy">
+                        Nut Allergy
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="dairy-free" class="restrictions">
+                        <input type="checkbox" name="dairy-free" id="dairy-free" value="dairy-free">
+                        Dairy-free
+                        <span class="checkmark"></span>
+                    </label>
+                        
                     <textarea id="textarea"></textarea>
 
-                <input type="submit" value="Submit">
+                <button action="/submit-page" method="POST" type="submit" value="Submit" id="submit-form-btn">Submit</button>
             <!-- end of booking form -->
              </form>
     </main>

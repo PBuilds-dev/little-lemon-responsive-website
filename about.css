@@ -17,23 +17,28 @@
 .about-hero {
     position: relative;
     text-align: center;
-    color: var(--primary-green);
+
 }
 .about-title {
     font-size: clamp(2.25rem, 5vw, 3rem);
-    margin: 0;
-    padding: var(--space-fluid-xs) 0;
-    text-align: center;
+    padding: var(--space-fluid-xs);
+    color: var(--primary-green);
 }
 .about-intro {
-    padding: var(--space-fluid-md);
-    border-radius: 20px;
     color: whitesmoke;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 .about-intro-text {
-    background-color: var(--primary-green);
     padding: var(--space-fluid-lg);
     border-radius: var(--radius-large);
+    font-size: var(--text-fluid-sm);
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 44rem;
 }
 .about-team-text,
 .about-values-text {
@@ -44,7 +49,7 @@
 .about-community-content,
 .about-values-content {
     background-color: var(--surface);
-    padding: var(--space-fluid-md);
+    padding: var(--space-fluid-lg);
     border-radius: var(--radius-large);
     align-items: center;
     justify-content: space-between;
@@ -72,6 +77,9 @@
     flex-direction: column;
     text-align: center;
     flex: auto;
+}
+.about-values {
+    margin-bottom: var(--space-fluid-md);
 }
 .about-gallery {
     overflow: hidden;

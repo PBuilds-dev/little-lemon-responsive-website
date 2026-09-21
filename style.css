@@ -151,14 +151,14 @@ main {
 }
 
 .testimonials {
-    margin: var(--space-fluid-lg) var(--space-fluid-md);
+    margin: var(--space-fluid-sm) var(--space-fluid-md) var(--space-fluid-md) var(--space-fluid-md);
     padding: var(--space-fluid-lg) var(--space-fluid-md);
     border-radius: var(--radius-large);
     background-color: var(--surface);
     box-shadow: var(--shadow-light);
 }
 
-.testimonials > h2 {
+.testimonials > h3 {
     margin-bottom: var(--space-fluid-md);
     text-align: center;
     color: var(--primary-green);
@@ -247,8 +247,10 @@ main {
 
 .testimonial-trigger img {
     width: 100%;
-    height: clamp(16rem, 38vw, 24rem);
     object-fit: cover;
+    height: clamp(13.75rem, 25vw, 15.625rem);
+    transition: transform 0.5s ease;
+    filter: brightness(0.95);
 }
 
 .testimonial-trigger span {

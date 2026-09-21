@@ -10,32 +10,12 @@ main {
 
 .menu-hero {
     text-align: center;
-    padding: var(--space-fluid-xl) var(--space-fluid-sm) var(--space-fluid-lg);
-    background:
-        linear-gradient(
-            rgba(255, 255, 255, 0.7),
-            rgba(255, 255, 255, 0.7)),
-        url(images/menu.jpg);
-    background-size: cover;
-    background-position: center;
+    padding: var(--space-fluid-sm) var(--space-fluid-sm);
 }
 
 .menu-title {
     margin-bottom: var(--space-fluid-sm);
     color: var(--primary-green);
-    letter-spacing: 0.15em;
-}
-
-.menu-description {
-    max-width: 44rem;
-    margin: 0 auto;
-    font-size: var(--text-fluid-md);
-}
-
-.menu-search {
-    background-color: var(--primary-yellow);
-    padding: var(--space-fluid-lg) var(--space-fluid-sm);
-    text-align: center;
 }
 
 .search-instructions {
