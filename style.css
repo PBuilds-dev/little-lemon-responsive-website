@@ -63,19 +63,20 @@ main {
 }
 
 .hero-button {
-    display: inline-block;
+    margin: var(--space-fluid-xs) var(--space-fluid-xs) 0 0;
     padding: var(--space-fluid-sm) var(--space-fluid-md);
-    background-color: var(--primary-yellow);
-    color: var(--primary-green);
-    font-weight: bold;
+    border: 0;
     border-radius: var(--radius-small);
-    transition: 0.3s ease;
+    background-color: var(--primary-green);
+    color: var(--text-on-dark);
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .hero-button:hover {
-    background-color: var(--accent-orange);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--primary-yellow);
+    color: var(--primary-green);
 }
 
 .info-section {
@@ -138,15 +139,21 @@ main {
 .card-button {    
     display: inline-block;
     padding: var(--space-fluid-sm) var(--space-fluid-md);
-    background-color: var(--primary-yellow);
-    color: var(--primary-green);
+    margin: var(--space-fluid-xs) var(--space-fluid-xs) 0 0;
+    background-color: var(--primary-green);
+    color: var(--text-on-dark);
     font-weight: bold;
+    font: inherit;
     border-radius: var(--radius-small);
     transition: 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+
 }
 
 .card-button:hover {
-    background-color: var(--accent-orange);
+    background-color: var(--primary-yellow);
+    color: var(--primary-green);
     transform: translateY(-3px);
 }
 
