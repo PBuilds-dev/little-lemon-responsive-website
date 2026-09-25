@@ -136,11 +136,30 @@
                         This is If a user manually types an invalid time (e.g., 11:00 AM), 
                         the browser will flag it as an error and block the form from being submitted.
                 -->
+                    <div>       
+                        <label for="guest-name" class="cols-3 ">Name: </label>
+                        <input type="text" name="guest-name" id="guest-name" placeholder="Jane Doe" required>
+                    </div>
 
-                    <label for="datemax">Date: </label>
+                    <div>
+                        <label for="phone-number">Phone Number: </label>
+                        <input type="tel" id="phone-number" name="phone-number" placeholder="ex. +639 8765 4321" required maxlength="12">
+                    </div>
+
+                    <div>
+                        <label for="email">Email Address: </label>
+                        <input type="email" id="email" name="email" placeholder="ex. name@email.com" required>
+                    </div>
+
+                    <div>
+                        <label for="datemax">Date: </label>
                         <input type="date" id="datemax" name="datemax" max="2026-12-20" min="2026-08-20" required>   
-                    <label for="booking-time">Time: </label>    
+                    </div>
+                    
+                    <div>
+                        <label for="booking-time">Time: </label>    
                         <input type="time" id="booking-time" name="booking-time" min="13:00" max="21:00" step="1800" required>
+                    </div>
                         <!-- Need JS Fallback for time and date validation -->
                     <label for="doptions">Dining Environment: </label>
                             <select name="dining-options" id="doptions">
@@ -150,13 +169,7 @@
                             </select>
                     <label for="guest-number">Guest Count: </label>
                     <input type="number" id="guest-number" min="1" max="7" required>
-                <h2>Representative Guest Information</h2>
-                    <label for="guest-name">Name: </label>
-                        <input type="text" name="guest-name" id="guest-name" placeholder="Jane Doe" required>
-                    <label for="phone-number">Phone Number: </label>
-                        <input type="tel" id="phone-number" name="phone-number" placeholder="ex. +639 8765 4321" required maxlength="12">
-                    <label for="email">Email Address: </label>
-                        <input type="email" id="email" name="email" placeholder="ex. name@email.com" required>
+                
                 <h2>Dining Needs</h2>
                     <label for="vegetarian" class="restrictions">
                         <input type="checkbox" name="vegetarian" id="vegetarian" value="vegetarian">
