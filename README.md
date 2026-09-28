@@ -1,7 +1,4 @@
 // for author: 
-// Reservation Page
-    - reservation form, needs to be polished even w/o logic yet
-    - styling of form should also be handled 
 // Home Page 
     - Testimonials image should be uniform
     - Book A Table > Reserve Now button should redirect to reservation page as well
